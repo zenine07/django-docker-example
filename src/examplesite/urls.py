@@ -16,14 +16,10 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
-
-from examplesite.views.about import AboutView
-from examplesite.views.index import IndexView
+from django.urls import path, include
 
 
 urlpatterns = [
-    path("", IndexView.as_view()),
-    path("about/", AboutView.as_view()),
     path("admin/", admin.site.urls),
+    path("polls/", include("polls.urls")),
 ]
