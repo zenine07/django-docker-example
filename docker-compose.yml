@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    container_name: django-api
+    volumes:
+      - ./src:/app
+    ports:
+      - 8000:8000
